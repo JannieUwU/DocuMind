@@ -1,8 +1,8 @@
-# Vue3 RAG Hybrid Search Application
+# RAG Hybrid Search Application
 
 A full-stack RAG (Retrieval-Augmented Generation) hybrid search application built with Vue 3 and FastAPI.
 
-## 🌟 Features
+## Features
 
 - **Intelligent Search**: Advanced RAG system with hybrid search capabilities
 - **Real-time Chat**: Interactive conversation interface with AI-powered responses
@@ -11,7 +11,7 @@ A full-stack RAG (Retrieval-Augmented Generation) hybrid search application buil
 - **Modern UI**: Responsive interface built with Vue 3 and Tailwind CSS
 - **API Documentation**: Auto-generated Swagger/OpenAPI documentation
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 vue3-rag-frontend2/
@@ -36,7 +36,7 @@ vue3-rag-frontend2/
 └── .github/               # GitHub configurations
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -83,7 +83,7 @@ The backend will be available at: http://localhost:8000
 
 API Documentation: http://localhost:8000/docs
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Frontend
 
@@ -104,14 +104,14 @@ API Documentation: http://localhost:8000/docs
 - **Pydantic** - Data validation
 - **JWT** - Authentication
 
-## 📚 Documentation
+## Documentation
 
 - [API Documentation](./docs/api/) - API endpoints and usage
 - [Architecture Documentation](./docs/architecture/) - System design and architecture
 - [Development Guide](./docs/development/) - Development setup and guidelines
 - [Deployment Guide](./docs/deployment/) - Deployment instructions
 
-## 🔧 Configuration
+## Configuration
 
 ### Frontend Configuration
 
@@ -142,7 +142,7 @@ ENVIRONMENT=development
 DEBUG=true
 ```
 
-## 🧪 Testing
+## Testing
 
 ### Frontend Tests
 
@@ -158,7 +158,7 @@ cd backend
 pytest tests/
 ```
 
-## 📦 Deployment
+## Deployment
 
 ### Docker Deployment
 
@@ -171,7 +171,7 @@ docker-compose up -d
 
 See [Deployment Guide](./docs/deployment/) for detailed instructions.
 
-## 🔐 Security
+## Security
 
 - JWT-based authentication
 - API key encryption
@@ -179,7 +179,7 @@ See [Deployment Guide](./docs/deployment/) for detailed instructions.
 - CORS configuration
 - Input validation
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -187,15 +187,15 @@ See [Deployment Guide](./docs/deployment/) for detailed instructions.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
-## 📧 Contact
+## Contact
 
 For questions and support, please open an issue on GitHub.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - OpenAI for the AI API
 - FastAPI community
