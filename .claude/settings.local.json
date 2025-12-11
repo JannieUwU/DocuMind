@@ -50,7 +50,11 @@
       "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Vue3 RAG Hybrid Search Application v1.0.0\n\nFeatures:\n- Vue3 + FastAPI full-stack application\n- RAG-powered intelligent document search and Q&A\n- JWT authentication system\n- Document processing (PDF, TXT, DOCX)\n- Hybrid search engine (vector + keyword)\n- OpenAI GPT integration\n- Responsive UI design\n- Selenium WebDriver test suite (49 tests, 100% pass rate)\n- Complete project documentation\n\nTech Stack:\n- Frontend: Vue 3, Pinia, Element Plus, Vite\n- Backend: Python, FastAPI, PostgreSQL, OpenAI\n- Testing: Selenium, Pytest\n\nTeam: Xie Zuyuan, Xu Haocheng, Yuan Junbin, Qiu Chudi\n\nGenerated with Claude Code\nEOF\n)\")",
       "Bash(git add push_to_github.bat)",
       "Bash(git add .claude/settings.local.json)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nAdd GitHub push helper script and update settings\n\n- Added push_to_github.bat for easy GitHub repository setup\n- Updated local Claude Code settings\n- Ready for GitHub deployment\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd GitHub push helper script and update settings\n\n- Added push_to_github.bat for easy GitHub repository setup\n- Updated local Claude Code settings\n- Ready for GitHub deployment\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git reset --soft HEAD~2)",
+      "Bash(git reset --soft 3f27c70^)",
+      "Bash(git rebase -i --root)",
+      "Bash(git commit -m \"Remove push_to_github.bat\")"
     ],
     "deny": [],
     "ask": []
