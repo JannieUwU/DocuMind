@@ -1,0 +1,52 @@
+import { createRouter, createWebHashHistory } from 'vue-router'
+import Login from '@/views/Login.vue'
+import Register from '@/views/Register.vue'
+import Dashboard from '@/views/Dashboard.vue'
+import NotFound from '@/views/NotFound.vue'
+
+const routes = [
+  {
+    path: '/',
+    name: 'Dashboard',
+    component: Dashboard,
+    meta: { requiresAuth: true, title: '首页' }
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+    meta: { requiresGuest: true, title: '登录' }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register,
+    meta: { requiresGuest: true, title: '注册' }
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFound,
+    meta: { title: '页面不存在' }
+  }
+]
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes
+})
+
+// 路由守卫
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = !!localStorage.getItem('token')
+  
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next('/login')
+  } else if (to.meta.requiresGuest && isAuthenticated) {
+    next('/')
+  } else {
+    next()
+  }
+})
+
+export default router

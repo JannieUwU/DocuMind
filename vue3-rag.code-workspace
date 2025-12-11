@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "name": "\ud83d\udcc1 Project Root",
+      "path": "."
+    },
+    {
+      "name": "\ud83c\udfa8 Frontend",
+      "path": "./frontend"
+    },
+    {
+      "name": "\ud83d\udd27 Backend",
+      "path": "./backend"
+    },
+    {
+      "name": "\ud83d\udcda Docs",
+      "path": "./docs"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/__pycache__": true,
+      "**/*.pyc": true,
+      "**/venv": true
+    }
+  }
+}

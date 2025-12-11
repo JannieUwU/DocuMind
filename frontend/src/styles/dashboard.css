@@ -1,0 +1,256 @@
+/**
+ * Dashboard Shared Styles
+ *
+ * Common styles shared across dashboard components.
+ * Extracted from Dashboard.vue to reduce duplication.
+ */
+
+/* ============================================
+   Layout Styles
+   ============================================ */
+
+.workspace-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #f3f4f6;
+  overflow: hidden;
+}
+
+.dark .workspace-wrapper {
+  background: var(--background);
+}
+
+.workspace-container {
+  display: flex;
+  width: 95vw;
+  max-width: 1920px;
+  height: 95vh;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.dark .workspace-container {
+  background: var(--surface);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   Sidebar Styles
+   ============================================ */
+
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-collapsed {
+  width: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.sidebar-content {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.sidebar-footer {
+  border-top: 1px solid #e5e7eb;
+}
+
+.dark .sidebar-footer {
+  border-color: var(--border-light);
+}
+
+/* ============================================
+   Main Content Area
+   ============================================ */
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: white;
+}
+
+.dark .main-content {
+  background: var(--background);
+}
+
+.chat-area {
+  flex: 1;
+  overflow-y: auto;
+  background: white;
+}
+
+.dark .chat-area {
+  background: var(--background);
+}
+
+/* ============================================
+   Theme Transition
+   ============================================ */
+
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ============================================
+   Scrollbar Styles
+   ============================================ */
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 1px;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* ============================================
+   Animation Styles
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.animate-fade-in:nth-child(1) { animation-delay: 0.1s; }
+.animate-fade-in:nth-child(2) { animation-delay: 0.2s; }
+.animate-fade-in:nth-child(3) { animation-delay: 0.3s; }
+
+/* ============================================
+   Dark Mode Overrides
+   ============================================ */
+
+.dark input,
+.dark textarea,
+.dark select {
+  color: var(--text-primary);
+  background-color: var(--surface-elevated);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* ============================================
+   Compact Mode
+   ============================================ */
+
+.compact-dashboard {
+  font-size: 0.875rem;
+}
+
+.compact-chat {
+  padding: 0.75rem;
+}
+
+.compact-input {
+  padding: 0.75rem;
+}
+
+.dark .compact-dashboard {
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+.dark #sidebar {
+  background: var(--surface);
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+.dark .compact-chat {
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+.dark .compact-input {
+  background: var(--surface);
+  border-color: var(--border-light);
+  color: var(--text-primary);
+}
+
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+@media (max-width: 768px) {
+  .workspace-container {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .sidebar {
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .sidebar-collapsed {
+    transform: translateX(-100%);
+  }
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.input-area {
+  flex-shrink: 0;
+}
+
+.chat-item {
+  max-height: 2.5rem;
+}

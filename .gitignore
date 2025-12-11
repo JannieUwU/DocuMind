@@ -1,0 +1,139 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+htmlcov/
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Frontend
+node_modules/
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Test reports and screenshots
+tests/reports/*.html
+tests/reports/assets/
+tests/screenshots/*.png
+
+# Selenium
+.wdm/
+*.side.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Build artifacts
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Documents (optional - comment out if you want to include)
+# document/
+
+# Backend specific
+backend/uploads/
+backend/vector_db/
+backend/*.db
+
+# Frontend specific
+frontend/.DS_Store
+frontend/dist/
+frontend/node_modules/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Problem files
+nul
+backend/nul
+frontend/nul

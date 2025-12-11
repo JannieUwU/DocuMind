@@ -1,0 +1,377 @@
+﻿/* style.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS 自定义属性定义 */
+:root {
+  --primary: #3B82F6;
+  --background: #FFFFFF;
+  --surface: #F9FAFB;
+  --surface-elevated: #FFFFFF;
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+  --border-light: #E5E7EB;
+  --border-medium: #D1D5DB;
+  --border-strong: #9CA3AF;
+}
+
+.dark {
+  --primary: #60A5FA;
+  --background: #111827;
+  --surface: #1F2937;
+  --surface-elevated: #374151;
+  --text-primary: #F9FAFB;
+  --text-secondary: #D1D5DB;
+  --text-tertiary: #9CA3AF;
+  --border-light: #374151;
+  --border-medium: #4B5563;
+  --border-strong: #6B7280;
+}
+
+@keyframes aurora {
+  from {
+    background-position: "50% 50%, 50% 50%";
+  }
+  to {
+    background-position: "350% 50%, 350% 50%";
+  }
+}
+
+/* 添加动画效果 */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+/* 滚动条优化 */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 毛玻璃效果 */
+.glass-effect {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* 主题过渡效果 */
+.theme-transition {
+  transition: background-color 0.3s ease, 
+              color 0.3s ease, 
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* 暗色模式优化 */
+.dark {
+  color-scheme: dark;
+}
+
+/* 减少视觉疲劳的优化 */
+.dark .visual-comfort {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 自定义滚动条 - 暗色优化 */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: var(--surface);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* 全局基础样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+/* 确保暗色模式文本可读性 */
+.dark {
+  color: var(--text-primary);
+}
+
+/* 确保暗色模式下所有文本元素都有正确的颜色 */
+.dark p,
+.dark span,
+.dark div,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark label,
+.dark li {
+  color: inherit;
+}
+
+/* 确保暗色模式下输入框和文本区域有正确的颜色 */
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark textarea,
+.dark select {
+  color: var(--text-primary) !important;
+  background-color: var(--surface-elevated) !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--text-tertiary) !important;
+  opacity: 1;
+}
+
+/* 强制设置暗色模式下所有按钮文字颜色 - 使用更高优先级和具体颜色值 */
+html.dark button,
+.dark button {
+  color: #F9FAFB !important;
+}
+
+html.dark button span,
+.dark button span {
+  color: #F9FAFB !important;
+}
+
+html.dark button i,
+.dark button i {
+  color: #F9FAFB !important;
+}
+
+/* 强制设置暗色模式下所有灰色文字类 - 使用具体颜色值 */
+html.dark .text-gray-500,
+html.dark .text-gray-600,
+html.dark .text-gray-400,
+.dark .text-gray-500,
+.dark .text-gray-600,
+.dark .text-gray-400 {
+  color: #D1D5DB !important;
+}
+
+html.dark .text-gray-700,
+html.dark .text-gray-800,
+html.dark .text-gray-900,
+.dark .text-gray-700,
+.dark .text-gray-800,
+.dark .text-gray-900 {
+  color: #F9FAFB !important;
+}
+
+/* 强制设置暗色模式下 kbd 标签 - 使用具体颜色值 */
+html.dark kbd,
+.dark kbd {
+  color: #F9FAFB !important;
+  background-color: #374151 !important;
+}
+
+/* 强制设置暗色模式下 select 和 option - 使用具体颜色值 */
+html.dark select,
+.dark select {
+  color: #F9FAFB !important;
+}
+
+html.dark option,
+.dark option {
+  color: #F9FAFB !important;
+  background-color: #1F2937 !important;
+}
+
+/* 强制设置暗色模式下输入框占位符 - 使用具体颜色值 */
+html.dark textarea::placeholder,
+html.dark input::placeholder,
+.dark textarea::placeholder,
+.dark input::placeholder {
+  color: #9CA3AF !important;
+  opacity: 1 !important;
+}
+
+/* 强制设置暗色模式下模态框内所有文字 - 使用更通用的选择器 */
+html.dark [class*="bg-white"][class*="dark:bg-surface"],
+.dark [class*="bg-white"][class*="dark:bg-surface"] {
+  color: #F9FAFB !important;
+}
+
+html.dark [class*="bg-white"][class*="dark:bg-surface"] h3,
+html.dark [class*="bg-white"][class*="dark:bg-surface"] h4,
+html.dark [class*="bg-white"][class*="dark:bg-surface"] h5,
+.dark [class*="bg-white"][class*="dark:bg-surface"] h3,
+.dark [class*="bg-white"][class*="dark:bg-surface"] h4,
+.dark [class*="bg-white"][class*="dark:bg-surface"] h5 {
+  color: #F9FAFB !important;
+}
+
+html.dark [class*="bg-white"][class*="dark:bg-surface"] p,
+html.dark [class*="bg-white"][class*="dark:bg-surface"] span,
+html.dark [class*="bg-white"][class*="dark:bg-surface"] div,
+.dark [class*="bg-white"][class*="dark:bg-surface"] p,
+.dark [class*="bg-white"][class*="dark:bg-surface"] span,
+.dark [class*="bg-white"][class*="dark:bg-surface"] div {
+  color: inherit;
+}
+
+/* 更通用的模态框文字颜色规则 - 使用属性选择器 */
+html.dark [class*="dark:bg-surface"][class*="rounded-lg"],
+.dark [class*="dark:bg-surface"][class*="rounded-lg"] {
+  color: #F9FAFB !important;
+}
+
+html.dark [class*="dark:bg-surface"][class*="rounded-lg"] *:not(button.bg-primary):not(button.text-white),
+.dark [class*="dark:bg-surface"][class*="rounded-lg"] *:not(button.bg-primary):not(button.text-white) {
+  color: inherit;
+}
+
+/* 强制覆盖所有灰色文字类在模态框中 */
+html.dark [class*="dark:bg-surface"] .text-gray-500,
+html.dark [class*="dark:bg-surface"] .text-gray-600,
+html.dark [class*="dark:bg-surface"] .text-gray-400,
+html.dark [class*="dark:bg-surface"] .text-gray-700,
+html.dark [class*="dark:bg-surface"] .text-gray-800,
+html.dark [class*="dark:bg-surface"] .text-gray-900,
+.dark [class*="dark:bg-surface"] .text-gray-500,
+.dark [class*="dark:bg-surface"] .text-gray-600,
+.dark [class*="dark:bg-surface"] .text-gray-400,
+.dark [class*="dark:bg-surface"] .text-gray-700,
+.dark [class*="dark:bg-surface"] .text-gray-800,
+.dark [class*="dark:bg-surface"] .text-gray-900 {
+  color: #F9FAFB !important;
+}
+
+/* 强制设置模态框内的所有文字元素 */
+html.dark [class*="dark:bg-surface"] h1,
+html.dark [class*="dark:bg-surface"] h2,
+html.dark [class*="dark:bg-surface"] h3,
+html.dark [class*="dark:bg-surface"] h4,
+html.dark [class*="dark:bg-surface"] h5,
+html.dark [class*="dark:bg-surface"] h6,
+html.dark [class*="dark:bg-surface"] p,
+html.dark [class*="dark:bg-surface"] span,
+html.dark [class*="dark:bg-surface"] div,
+.dark [class*="dark:bg-surface"] h1,
+.dark [class*="dark:bg-surface"] h2,
+.dark [class*="dark:bg-surface"] h3,
+.dark [class*="dark:bg-surface"] h4,
+.dark [class*="dark:bg-surface"] h5,
+.dark [class*="dark:bg-surface"] h6,
+.dark [class*="dark:bg-surface"] p,
+.dark [class*="dark:bg-surface"] span,
+.dark [class*="dark:bg-surface"] div {
+  color: #F9FAFB !important;
+}
+
+/* 强制设置暗色模式下 Element Plus 组件文字 */
+html.dark .el-input__inner,
+html.dark .el-textarea__inner,
+.dark .el-input__inner,
+.dark .el-textarea__inner {
+  color: #F9FAFB !important;
+  background-color: #374151 !important;
+}
+
+html.dark .el-input__inner::placeholder,
+html.dark .el-textarea__inner::placeholder,
+.dark .el-input__inner::placeholder,
+.dark .el-textarea__inner::placeholder {
+  color: #9CA3AF !important;
+}
+
+html.dark .el-label,
+html.dark .el-form-item__label,
+.dark .el-label,
+.dark .el-form-item__label {
+  color: #D1D5DB !important;
+}
+
+html.dark .el-tag,
+.dark .el-tag {
+  color: #F9FAFB !important;
+}
+
+/* Element Plus 组件暗色模式样式 */
+html.dark .el-switch__label,
+.dark .el-switch__label {
+  color: #D1D5DB !important;
+}
+
+html.dark .el-button:not(.el-button--primary):not(.el-button--success):not(.el-button--warning):not(.el-button--danger):not(.el-button--info),
+.dark .el-button:not(.el-button--primary):not(.el-button--success):not(.el-button--warning):not(.el-button--danger):not(.el-button--info) {
+  color: #F9FAFB !important;
+  background-color: #374151 !important;
+  border-color: #4B5563 !important;
+}
+
+html.dark .el-button:not(.el-button--primary):not(.el-button--success):not(.el-button--warning):not(.el-button--danger):not(.el-button--info):hover,
+.dark .el-button:not(.el-button--primary):not(.el-button--success):not(.el-button--warning):not(.el-button--danger):not(.el-button--info):hover {
+  background-color: #4B5563 !important;
+  border-color: #6B7280 !important;
+}
+
+html.dark .el-icon,
+.dark .el-icon {
+  color: inherit;
+}
+
+html.dark .el-switch__core,
+.dark .el-switch__core {
+  background-color: #4B5563 !important;
+}
+
+html.dark .el-switch.is-checked .el-switch__core,
+.dark .el-switch.is-checked .el-switch__core {
+  background-color: #60A5FA !important;
+}
+
+/* 改进的焦点样式 */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* 选择文本颜色 */
+::selection {
+  background-color: var(--primary);
+  color: white;
+}
